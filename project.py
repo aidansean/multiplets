@@ -3,9 +3,13 @@ from project_module import project_object, image_object, link_object, challenge_
 p = project_object('multiplets', 'Particle multiplets')
 p.domain = 'http://www.aidansean.com/'
 p.path = 'multiplets'
-p.preview_image_ = image_object('http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg', 408, 287)
+p.preview_image    = image_object('%s/images/project.jpg'   %p.path, 150, 250)
+p.preview_image_bw = image_object('%s/images/project_bw.jpg'%p.path, 150, 250)
+p.folder_name = 'aidansean'
 p.github_repo_name = 'multiplets'
 p.mathjax = True
+p.tags = 'Physics'
+p.technologies = 'HTML,PHP,SVG'
 p.links.append(link_object(p.domain, 'multiplets', 'Live page'))
 p.introduction = 'For my thesis I needed to describe many of the know mesons and baryons.  To better illustrate their relation to each other I decided to create an SVG image showing a three dimensional representation in isospin and weak hypercharge space.'
 p.overview = '''The multiplets are constructed from a series of points, wires and polygons.  These are then rotated using two of three Euler angles (the rotation about the intrinsic \(z\) axis is not useful in this case) and the resulting SVG document is written server side using PHP.  The client is then left to render the image.
